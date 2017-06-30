@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1504.81">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</p>
+<p class="p1">&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="utf-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="description" content="OXY first example"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="author" content="mrgr"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1">&lt;title&gt;OXY first example&lt;/title&gt;</p>
+<p class="p1">&lt;style type="text/css"&gt;</p>
+<p class="p1">body{</p>
+<p class="p1"><span class="Apple-tab-span">	</span>font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-left: 3px;</p>
+<p class="p1">}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>#container{</p>
+<p class="p1"><span class="Apple-tab-span">	</span>margin: 0 auto;}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1">&lt;div class="row" id="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">   </span>&lt;div class="col-sm-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">       </span>&lt;div class="table-responsive"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">           </span>How many delegates do you want to see?:</p>
+<p class="p1"><span class="Apple-converted-space">           </span>&lt;input type="text" id="numberdel"&gt; &lt;input type="button" value="Get delegates" id="getbutton"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;table id="delegatestable" summary="OXY delegates" class="table table-striped"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;#&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;Delegate&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;Address&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;ProducedBlocks&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;MissedBlocks&lt;/th&gt; <span class="Apple-converted-space">       </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">           </span>&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">           </span>&lt;span id="messages"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">       </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script type="text/javascript"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var iRow = 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>$(document).ready(function() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>$("#delegatestable").hide();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>$("#getbutton").on('click', function(ev) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>$("#getbutton").prop("disabled",true);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>$("#messages").text("Loading..");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>get_delegates($("#numberdel").val());</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function get_delegates(ilimit){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>$.ajax({<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>type: 'GET',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>url: 'https://twallet.oxycoin.io/api/delegates',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>data: { limit: ilimit },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>dataType: 'json',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>success: function (data) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(data.success){</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>for (var delegate in data.delegates) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>var table_row="&lt;tr&gt;"+</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>"&lt;td&gt;"+data.delegates[delegate].rate+"&lt;/td&gt;"+</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>"&lt;td&gt;"+data.delegates[delegate].username+"&lt;/td&gt;"+</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>"&lt;td&gt;"+data.delegates[delegate].address+"&lt;/td&gt;"+</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>"&lt;td&gt;"+data.delegates[delegate].producedblocks+"&lt;/td&gt;"+</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>"&lt;td&gt;"+data.delegates[delegate].missedblocks+"&lt;/td&gt;"+</p>
+<p class="p1"><span class="Apple-converted-space">                                       </span>"&lt;/tr&gt;";</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>$("#delegatestable").append(table_row);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>$("#delegatestable").delay(700).fadeIn(500);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>$("#messages").text("");</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}else{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>$("#messages").html("Error: " + data.error + ".. please reload this page &lt;input type='button' value='reload' onclick='javascript:window.location.reload();'&gt;");</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
